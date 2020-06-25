@@ -1,0 +1,65 @@
+{% extends 'layout.html' %}
+{% block content %}
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+
+    
+    
+<div class="container">   
+
+<table>
+<head>
+  <tr>
+    <th>User</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Admin</th>
+  </tr>
+  </head>
+  <tbody>
+   {% for admin in admins %}
+  <tr>
+    <td>{{ admin.username }}</td>
+    <td>{{ admin.email }}</td>
+    <td>{{ admin.password }}</td>
+    <td>{{ admin.admin }}</td>
+  </tr>
+  {% endfor %}
+   </tbody>
+</table>
+    
+   
+</div>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+{% endblock %}

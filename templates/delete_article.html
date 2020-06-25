@@ -1,0 +1,30 @@
+{% extends 'layout.html' %}
+{% block content %}
+
+<table>
+<head>
+  <tr>
+    <th>User</th>
+    <th>Email</th>
+    <th>Password</th>
+    <th>Admin</th>
+  </tr>
+  </head>
+  <tbody>
+   {% for admin in admins %}
+  <tr>
+    <td>{{ admin.username }}</td>
+    <td>{{ admin.email }}</td>
+    <td>{{ admin.password }}</td>
+    <td>{{ admin.admin }}</td>
+      <td>
+          <form action="{{url_for('delete_post', id=user.id)}}" method="POST">
+            <input class="btn btn-danger" type="submit" value="Delete">
+          </form>
+    </td>
+  </tr>
+  {% endfor %}
+   </tbody>
+</table>
+    
+{% endblock %}
